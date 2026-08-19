@@ -40,38 +40,4 @@ Paste any **public GitHub repository URL** and run the analysis.
 
 ## How It Works
 
-```text
-GitHub Repository URL
-          │
-          ▼
-  Get Repository Tree
-       GitHub MCP
-          │
-          ▼
-    Select Important
-        Files
-       Groq LLM
-          │
-          ▼
-        Send()
-          │
-    ┌─────┼─────┐
-    ▼     ▼     ▼
-  File  File  File
-Analysis Analysis Analysis
-    └─────┼─────┘
-          ▼
-       Combiner
-          │
-    ┌─────┼─────┐
-    ▼     ▼     ▼
-  Architecture
-  Implementation
-  Evaluation
-    └─────┼─────┘
-          ▼
-    Final Synthesis
-       Groq + Zod
-          │
-          ▼
-    Structured Report
+<img width="1536" height="1024" alt="ChatGPT Image Aug 20, 2026, 12_05_31 AM" src="https://github.com/user-attachments/assets/2a84ee2f-f21c-498a-bf6d-23cc394bcb02" />
