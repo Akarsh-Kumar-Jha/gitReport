@@ -11,7 +11,7 @@ export const Header = () => {
         </div>
         <div className="flex flex-col">
           <span className="font-display font-black text-base sm:text-lg tracking-wider leading-none text-[#F5F3EC]">
-            CODESCOPE
+            REPOLENS
           </span>
           <span className="font-mono text-[8px] sm:text-[9px] tracking-widest text-[#C8FF00] uppercase mt-0.5 hidden xs:block">
             AI-POWERED REPOSITORY ANALYZER

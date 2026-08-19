@@ -8,7 +8,7 @@ export const ReportHeader = ({ report, onReset }) => {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(report, null, 2));
     const downloadAnchor = document.createElement('a');
     downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", `codescope_report_${report?.repository?.name || 'analysis'}.json`);
+    downloadAnchor.setAttribute("download", `repolens_report_${report?.repository?.name || 'analysis'}.json`);
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
@@ -21,7 +21,7 @@ export const ReportHeader = ({ report, onReset }) => {
         <div className="w-full sm:w-auto">
           <div className="flex items-center gap-2 text-[#C8FF00] font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest">
             <FileText className="w-3.5 h-3.5" />
-            <span>CODESCOPE TECHNICAL REPORT</span>
+            <span>REPOLENS TECHNICAL REPORT</span>
           </div>
           <h2 className="font-display font-black text-xl sm:text-3xl md:text-4xl uppercase tracking-tight text-[#F5F3EC] mt-1 break-all">
             {repositoryName}

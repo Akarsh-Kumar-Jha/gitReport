@@ -94,7 +94,7 @@ export default function App() {
         <footer className="w-full border-t-2 border-[#0A0A0A] bg-[#0A0A0A] text-[#F5F3EC] py-4 px-4 text-center font-mono text-xs mt-auto">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px]">
             <div className="flex items-center gap-2">
-              <span className="font-bold text-[#C8FF00]">CODESCOPE</span>
+              <span className="font-bold text-[#C8FF00]">REPOLENS</span>
               <span className="text-[#5F5F5F]">|</span>
               <span className="text-gray-400">AI REPOSITORY ANALYZER</span>
             </div>

@@ -21,7 +21,7 @@ export const Hero = () => {
 
       {/* Description */}
       <p className="text-xs sm:text-sm md:text-base text-[#5F5F5F] font-sans font-medium max-w-md sm:max-w-lg leading-normal sm:leading-relaxed">
-        CodeScope analyzes the structure, architecture, implementation, and quality of any public GitHub repository and delivers actionable insights in 1–2 minutes.
+        RepoLens analyzes the structure, architecture, implementation, and quality of any public GitHub repository and delivers actionable insights in 1–2 minutes.
       </p>
     </div>
   );

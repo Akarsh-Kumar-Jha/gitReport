@@ -31,7 +31,7 @@ export const RepositoryInput = ({ inputRef, onSubmit, isLoading, error }) => {
       return {
         title: "AI MODEL RATE LIMIT EXCEEDED",
         message: "The free AI model tier daily request limit has been reached for code analysis.",
-        suggestion: "CodeScope utilizes free AI models which share daily rate limits. Please wait a few minutes and try running the analysis again, or try analyzing another repository."
+        suggestion: "RepoLens utilizes free AI models which share daily rate limits. Please wait a few minutes and try running the analysis again, or try analyzing another repository."
       };
     }
 
@@ -48,7 +48,7 @@ export const RepositoryInput = ({ inputRef, onSubmit, isLoading, error }) => {
     if (str.includes("connect") || str.includes("3000") || str.includes("Network Error") || str.includes("backend") || str.includes("onrender.com")) {
       return {
         title: "BACKEND SERVER OFFLINE",
-        message: "Unable to reach CodeScope backend server at https://gitreport-backend.onrender.com.",
+        message: "Unable to reach RepoLens backend server at https://gitreport-backend.onrender.com.",
         suggestion: "The deployed Render backend server may be waking up from sleep mode (Render free instances spin down after inactivity). Please try again in 30 seconds."
       };
     }
