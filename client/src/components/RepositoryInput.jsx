@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Github, Play, Loader2, AlertTriangle, ArrowRight, Cpu, X } from "lucide-react";
+import { Github, Play, Loader2, AlertTriangle, ArrowRight, Cpu, X, Clock } from "lucide-react";
 
 export const RepositoryInput = ({ inputRef, onSubmit, isLoading, error }) => {
   const [url, setUrl] = useState("");
@@ -206,6 +206,12 @@ export const RepositoryInput = ({ inputRef, onSubmit, isLoading, error }) => {
                 </>
               )}
             </button>
+          </div>
+
+          {/* Deployed Backend Free Tier Advisory Note */}
+          <div className="flex items-center gap-1.5 pt-0.5 text-[11px] font-mono text-[#5F5F5F] leading-tight">
+            <Clock className="w-3.5 h-3.5 text-[#0A0A0A] shrink-0 stroke-[2.5]" />
+            <span>Note: Analysis may take 1–2 minutes as the backend is deployed on a free server instance.</span>
           </div>
 
           {/* Loading Progress State Banner */}

@@ -75,8 +75,8 @@ export default function App() {
       {/* 1. Header */}
       <Header />
 
-      {/* 2. SECTION 1 — LANDING / ANALYZER */}
-      <section className="w-full min-h-[calc(100vh-55px)] flex flex-col justify-center items-center gap-6 sm:gap-8 px-4 sm:px-6 py-6 max-w-6xl mx-auto shrink-0">
+      {/* 2. SECTION 1 — LANDING / ANALYZER (Strict 100vh Viewport Fit) */}
+      <section className="w-full h-[calc(100vh-55px)] max-h-[calc(100vh-55px)] flex flex-col justify-evenly items-center gap-2 sm:gap-4 px-4 sm:px-6 py-2 sm:py-4 max-w-6xl mx-auto shrink-0 overflow-hidden">
         <Hero />
         <RepositoryInput inputRef={inputRef} onSubmit={handleAnalyze} isLoading={loading} error={error} />
         <FeatureStrip />
