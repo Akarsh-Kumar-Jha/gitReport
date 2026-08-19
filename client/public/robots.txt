@@ -1,0 +1,8 @@
+# ==========================================
+# RepoLens Robots.txt for Search Engine Indexing
+# ==========================================
+
+User-agent: *
+Allow: /
+
+Sitemap: https://gitreport-backend.onrender.com/sitemap.xml
