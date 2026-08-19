@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #F5F3EC;
+    --primary-black: #0A0A0A;
+    --accent-lime: #C8FF00;
+    --text-main: #0A0A0A;
+    --muted-grey: #5F5F5F;
+  }
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #F5F3EC;
+  color: #0A0A0A;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Neo-Brutalist utilities */
+.border-brutal {
+  border: 2px solid #0A0A0A;
+}
+
+.border-brutal-lg {
+  border: 3px solid #0A0A0A;
+}
+
+.shadow-brutal {
+  box-shadow: 4px 4px 0px 0px #0A0A0A;
+}
+
+.shadow-brutal-lg {
+  box-shadow: 6px 6px 0px 0px #0A0A0A;
+}
+
+.shadow-brutal-sm {
+  box-shadow: 2px 2px 0px 0px #0A0A0A;
+}
+
+.shadow-brutal-accent {
+  box-shadow: 4px 4px 0px 0px #C8FF00;
+}
+
+.hover-brutal {
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.15s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.hover-brutal:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #0A0A0A;
+}
+
+.hover-brutal:active:not(:disabled) {
+  transform: translate(0px, 0px);
+  box-shadow: 2px 2px 0px 0px #0A0A0A;
+}
