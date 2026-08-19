@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// Using relative path so Vite proxy handles dev server requests, fallback to localhost:3000
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+// Deployed backend API base URL
+const API_BASE_URL = (import.meta.env.VITE_API_URL || "https://gitreport-backend.onrender.com").replace(/\/+$/, "");
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -21,7 +21,7 @@ export const generateReport = async (repoUrl) => {
     if (error.response) {
       throw new Error(error.response.data?.error || `Server error (${error.response.status})`);
     } else if (error.request) {
-      throw new Error("Unable to connect to CodeScope backend server. Please ensure the backend is running on port 3000.");
+      throw new Error("Unable to connect to CodeScope backend server at https://gitreport-backend.onrender.com. Please check server deployment status.");
     } else {
       throw new Error(error.message || "An unexpected error occurred.");
     }

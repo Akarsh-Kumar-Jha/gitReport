@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Github, Play, Loader2, AlertTriangle, ArrowRight, Cpu, X, RefreshCw } from "lucide-react";
+import { Github, Play, Loader2, AlertTriangle, ArrowRight, Cpu, X } from "lucide-react";
 
 export const RepositoryInput = ({ inputRef, onSubmit, isLoading, error }) => {
   const [url, setUrl] = useState("");
@@ -18,20 +18,42 @@ export const RepositoryInput = ({ inputRef, onSubmit, isLoading, error }) => {
     if (!rawError) return null;
     const str = String(rawError);
 
+    // Rate Limit / Quota Exceeded Interceptor
+    if (
+      str.includes("Rate limit") ||
+      str.includes("rate_limit") ||
+      str.includes("429") ||
+      str.includes("quota") ||
+      str.includes("free-models") ||
+      str.includes("limit_source") ||
+      str.includes("daily reset")
+    ) {
+      return {
+        title: "AI MODEL RATE LIMIT EXCEEDED",
+        message: "The free AI model tier daily request limit has been reached for code analysis.",
+        suggestion: "CodeScope utilizes free AI models which share daily rate limits. Please wait a few minutes and try running the analysis again, or try analyzing another repository."
+      };
+    }
+
+    // 404 Not Found
     if (str.includes("404") || str.includes("Not Found")) {
       return {
         title: "REPOSITORY NOT FOUND (404)",
-        message: "The requested GitHub repository does not exist or is private.",
+        message: "The requested GitHub repository does not exist or is set to private.",
         suggestion: "Please check for typos in the repository owner or name, and verify that the repository is set to public on GitHub."
       };
     }
-    if (str.includes("connect") || str.includes("3000") || str.includes("Network Error") || str.includes("backend")) {
+
+    // Backend Offline
+    if (str.includes("connect") || str.includes("3000") || str.includes("Network Error") || str.includes("backend") || str.includes("onrender.com")) {
       return {
         title: "BACKEND SERVER OFFLINE",
-        message: "Unable to reach CodeScope backend server on http://localhost:3000.",
-        suggestion: "Please start the backend server in your terminal by running: cd server && npm start"
+        message: "Unable to reach CodeScope backend server at https://gitreport-backend.onrender.com.",
+        suggestion: "The deployed Render backend server may be waking up from sleep mode (Render free instances spin down after inactivity). Please try again in 30 seconds."
       };
     }
+
+    // GitHub Auth Error
     if (str.includes("GITHUB_TOKEN") || str.includes("401") || str.includes("Unauthorized")) {
       return {
         title: "GITHUB AUTHENTICATION FAILED",
@@ -39,6 +61,7 @@ export const RepositoryInput = ({ inputRef, onSubmit, isLoading, error }) => {
         suggestion: "Please verify that your GITHUB_TOKEN environment variable is properly configured in server/.env."
       };
     }
+
     return {
       title: "ANALYSIS FAILED",
       message: str,
@@ -109,8 +132,8 @@ export const RepositoryInput = ({ inputRef, onSubmit, isLoading, error }) => {
 
             {modalContent.suggestion && (
               <div className="bg-[#0A0A0A] text-[#F5F3EC] border border-[#0A0A0A] p-3 font-mono text-xs text-left space-y-1">
-                <span className="text-[#C8FF00] text-[10px] block font-bold tracking-wider uppercase">HOW TO FIX</span>
-                <p className="text-gray-300 font-medium text-xs">{modalContent.suggestion}</p>
+                <span className="text-[#C8FF00] text-[10px] block font-bold tracking-wider uppercase">HOW TO RESOLVE</span>
+                <p className="text-gray-300 font-medium text-xs leading-normal">{modalContent.suggestion}</p>
               </div>
             )}
 
