@@ -19,6 +19,9 @@ export const Hero = () => {
         IN MINUTES.
       </h1>
 
+      {/* Hidden SEO Heading for Search Engines */}
+      <h2 className="sr-only">RepoLens AI — Free GitHub Repository Codebase & Architecture Analyzer</h2>
+
       {/* Description */}
       <p className="text-xs sm:text-sm text-[#5F5F5F] font-sans font-medium max-w-md sm:max-w-lg leading-tight sm:leading-normal">
         RepoLens analyzes the structure, architecture, implementation, and quality of any public GitHub repository and delivers actionable insights in 1–2 minutes.

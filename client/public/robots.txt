@@ -1,8 +1,9 @@
 # ==========================================
 # RepoLens Robots.txt for Search Engine Indexing
+# Domain: https://repolens.akarshjha.in/
 # ==========================================
 
 User-agent: *
 Allow: /
 
-Sitemap: https://gitreport-backend.onrender.com/sitemap.xml
+Sitemap: https://repolens.akarshjha.in/sitemap.xml
